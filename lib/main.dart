@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter_2_udemy/3_application/core/services/theme_service.dart';
+import 'package:learn_flutter_2_udemy/3_application/pages/advice/advice_page.dart';
 import 'package:learn_flutter_2_udemy/theme.dart';
 import 'package:provider/provider.dart';
 
@@ -22,9 +23,8 @@ class MainApp extends StatelessWidget {
       themeMode: themeService.isDarkModeOn ? ThemeMode.dark : ThemeMode.light,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      
       home: const SafeArea(
-        child: Placeholder(),
+        child: AdvicePage(),
       ),
     );
     });
