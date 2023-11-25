@@ -24,7 +24,7 @@ class MainApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       home: const SafeArea(
-        child: AdvicePage(),
+        child: AdvicerPageWrapperProvider(),
       ),
     );
     });
