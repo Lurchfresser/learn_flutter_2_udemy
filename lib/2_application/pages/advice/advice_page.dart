@@ -3,11 +3,11 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:learn_flutter_2_udemy/3_application/core/services/theme_service.dart';
-import 'package:learn_flutter_2_udemy/3_application/pages/advice/bloc/advicer_bloc.dart';
-import 'package:learn_flutter_2_udemy/3_application/pages/advice/widgets/advice_field.dart';
-import 'package:learn_flutter_2_udemy/3_application/pages/advice/widgets/custom_button.dart';
-import 'package:learn_flutter_2_udemy/3_application/pages/advice/widgets/error_message.dart';
+import 'package:learn_flutter_2_udemy/2_application/core/services/theme_service.dart';
+import 'package:learn_flutter_2_udemy/2_application/pages/advice/cubit/advicer_cubit.dart';
+import 'package:learn_flutter_2_udemy/2_application/pages/advice/widgets/advice_field.dart';
+import 'package:learn_flutter_2_udemy/2_application/pages/advice/widgets/custom_button.dart';
+import 'package:learn_flutter_2_udemy/2_application/pages/advice/widgets/error_message.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,7 +17,7 @@ class AdvicerPageWrapperProvider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AdvicerBloc(),
+      create: (context) => AdvicerCubit(),
       child: const AdvicePage(),
     );
   }
@@ -49,7 +49,7 @@ class AdvicePage extends StatelessWidget {
           children: [
             Expanded(
               child: Center(
-                child: BlocBuilder<AdvicerBloc, AdvicerState>(
+                child: BlocBuilder<AdvicerCubit, AdvicerCubitState>(
                   builder: (context, state) {
                     if (state is AdvicerInitial) {
                       return Text(
