@@ -8,6 +8,7 @@ import 'package:learn_flutter_2_udemy/2_application/pages/advice/cubit/advicer_c
 import 'package:learn_flutter_2_udemy/2_application/pages/advice/widgets/advice_field.dart';
 import 'package:learn_flutter_2_udemy/2_application/pages/advice/widgets/custom_button.dart';
 import 'package:learn_flutter_2_udemy/2_application/pages/advice/widgets/error_message.dart';
+import 'package:learn_flutter_2_udemy/injection.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,7 +18,7 @@ class AdvicerPageWrapperProvider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AdvicerCubit(),
+      create: (context) => sl<AdvicerCubit>(),
       child: const AdvicePage(),
     );
   }
