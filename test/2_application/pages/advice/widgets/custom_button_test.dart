@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -6,10 +5,10 @@ import 'package:learn_flutter_2_udemy/2_application/pages/advice/widgets/custom_
 import 'package:mockito/mockito.dart';
 
 
-Widget widgetUnderTest(Function? onTap) {
+Widget widgetUnderTest(VoidCallback? onTap) {
   return MaterialApp(
     home: Scaffold(
-      body: CustomButton(onTap: onTap,),
+      body: CustomButton(onTap: ()=>onTap?.call(),),
     ),
   );
 }
@@ -46,9 +45,10 @@ void main() {
 
           final customButtonFinder = find.byType(CustomButton);
 
-          widgetTester.tap(customButtonFinder);
+          await widgetTester.tap(customButtonFinder);
+          await widgetTester.pumpAndSettle();
 
-          verify(mockFakeFunction()).called(1);
+          verify(mockFakeFunction.call()).called(1);
         },
       );
     });

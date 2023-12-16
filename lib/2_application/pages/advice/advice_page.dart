@@ -1,6 +1,5 @@
 // ignore_for_file: deprecated_member_use
 
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:learn_flutter_2_udemy/2_application/core/services/theme_service.dart';
@@ -33,7 +32,6 @@ class AdvicePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        // ignore: deprecated_member_use
         title: Text('Adviser', style: theme.textTheme.headline1),
         centerTitle: true,
         actions: [

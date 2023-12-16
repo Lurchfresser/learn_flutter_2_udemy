@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:learn_flutter_2_udemy/1_domain/entities/advice_entity.dart';
 import 'package:learn_flutter_2_udemy/1_domain/failures/failures.dart';
 import 'package:learn_flutter_2_udemy/1_domain/usecases/advice_usecases.dart';
 
